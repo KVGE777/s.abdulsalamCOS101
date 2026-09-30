@@ -30,6 +30,6 @@ fn main() {
 
         println!("Equation only has one root: {}", z);
     } else {
-        println!("Equation has no real roots.")
+        println!("Equation has no real roots.");
     }
 }
