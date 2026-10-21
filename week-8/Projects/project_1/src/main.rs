@@ -1,13 +1,13 @@
 use std::io;
 
 struct Level {
-    level: &'static str,
+    level: String,
     years_min: u32,
     years_max: u32,
-    office_admin: &'static str,
-    academic: &'static str,
-    lawyer: &'static str,
-    teacher: &'static str,
+    office_admin: String,
+    academic: String,
+    lawyer: String,
+    teacher: String,
 }
 
 fn check(table: &Vec<Level>, role: &str, years: u32) {
@@ -36,24 +36,24 @@ fn check(table: &Vec<Level>, role: &str, years: u32) {
 
 fn main() {
     let table: Vec<Level> = vec![
-        Level { level: "APS 1-2", years_min: 0, years_max: 2,
-                office_admin: "Intern", academic: "-",
-                lawyer: "Paralegal", teacher: "Placement" },
-        Level { level: "APS 3-5", years_min: 3, years_max: 4,
-                office_admin: "Administrator", academic: "Research Assistant",
-                lawyer: "Junior Associate", teacher: "Classroom Teacher" },
-        Level { level: "APS 5-8", years_min: 5, years_max: 7,
-                office_admin: "Senior Administrator", academic: "PhD Candidate",
-                lawyer: "Associate", teacher: "Senior Teacher" },
-        Level { level: "EL1 8-10", years_min: 8, years_max: 9,
-                office_admin: "Office Manager", academic: "Post-Doc Researcher",
-                lawyer: "Senior Associate 1-2", teacher: "Leading Teacher" },
-        Level { level: "EL2 10-13", years_min: 10, years_max: 13,
-                office_admin: "Director", academic: "Senior Lecturer",
-                lawyer: "Senior Associate 3-4", teacher: "Deputy Principal" },
-        Level { level: "SES", years_min: 13, years_max: 50,
-                office_admin: "CEO", academic: "Dean",
-                lawyer: "Partner", teacher: "Principal" },
+        Level { level: "APS 1-2".to_string(), years_min: 0, years_max: 2,
+                office_admin: "Intern".to_string(), academic: "-".to_string(),
+                lawyer: "Paralegal".to_string(), teacher: "Placement".to_string()},
+        Level { level: "APS 3-5".to_string(), years_min: 3, years_max: 4,
+                office_admin: "Administrator".to_string(), academic: "Research Assistant".to_string(),
+                lawyer: "Junior Associate".to_string(), teacher: "Classroom Teacher".to_string().to_string() },
+        Level { level: "APS 5-8".to_string(), years_min: 5, years_max: 7,
+                office_admin: "Senior Administrator".to_string(), academic: "PhD Candidate".to_string(),
+                lawyer: "Associate".to_string(), teacher: "Senior Teacher".to_string() },
+        Level { level: "EL1 8-10".to_string(), years_min: 8, years_max: 9,
+                office_admin: "Office Manager".to_string(), academic: "Post-Doc Researcher".to_string(),
+                lawyer: "Senior Associate 1-2".to_string(), teacher: "Leading Teacher".to_string() },
+        Level { level: "EL2 10-13".to_string(), years_min: 10, years_max: 13,
+                office_admin: "Director".to_string(), academic: "Senior Lecturer".to_string(),
+                lawyer: "Senior Associate 3-4".to_string(), teacher: "Deputy Principal".to_string() },
+        Level { level: "SES".to_string(), years_min: 13, years_max: 50,
+                office_admin: "CEO".to_string(), academic: "Dean".to_string(),
+                lawyer: "Partner".to_string(), teacher: "Principal".to_string() },
         ];
 
         println!("Enter your Staff Level:");
