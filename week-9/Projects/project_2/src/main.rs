@@ -10,7 +10,7 @@ struct Student {
 }
 
 fn input_text(data: &str) -> String {
-    println!("Please enter your {}:", data);
+    println!("Enter your {}:", data);
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("Failed to read line");
     input.trim().to_string()
@@ -40,17 +40,13 @@ fn main() {
 
         students.push(Student {full_name, matric_no, department, level});
 
-        let rerun = input_text("Add another student? (Yes/No)");
+        let rerun = input_text("another student? (Yes/No)");
         if rerun.to_lowercase() != "yes" {
             break;
         }
     }
 
-    let mut file = OpenOptions::new()
-    .create(true)
-    .append(true)
-    .open("Students.csv")
-    .expect("Could not open file");
+    let mut file = OpenOptions::new().create(true).append(true).open("Students.csv").expect("Could not open file");
 
     for s in students.iter() {
         let row = format!("{},{},{},{}\n", s.full_name, s.matric_no, s.department, s.level);
